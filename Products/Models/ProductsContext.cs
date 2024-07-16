@@ -6,7 +6,8 @@ namespace Products.Models
 {
     public class ProductsContext : DbContext
     {
-        public ProductsContext() { }
+        public ProductsContext(DbContextOptions<ProductsContext> options) : base(options)
+        { }
 
         public virtual DbSet<Product> Products { get; set; }
     }
